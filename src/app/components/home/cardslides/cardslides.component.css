@@ -1,0 +1,14 @@
+img {
+  max-width: fit-content;
+  height: auto;
+}
+
+
+.card {
+  margin: 5px;
+}
+
+.btn-car {
+  background: #ff6b6b;
+  color: #FAF3F3;
+}

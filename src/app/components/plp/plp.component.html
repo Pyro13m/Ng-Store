@@ -1,0 +1,60 @@
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-lg-4">
+      <div class="card" style="max-width: 300px; border: 0; " *ngFor="let prod of prod_data"> -->
+<!-- <img src="../../../assets/img/product-1.jpg" class="card-img-top" /> -->
+
+<!-- <img src='{{"../../../assets/img/"+ prod.product + ".jpg"}}' class="card-img-top" />
+        <div class="card-body">
+          <h4 class="card-title">{{prod.product}}</h4>
+          <p class="card-text" style="display: inline;">Discount Price: $350 </p>
+          <p style="text-decoration: line-through; display: inline; float: right;">$400</p>
+          <br>
+          <a href=""><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="catalog">
+  <div class="card" style="width:300px;display: inline-flex; margin: 5px; text-align: center; border: 0;"
+    *ngFor="let prod of prod_data | paginate: { itemsPerPage: 12, currentPage: p}; let indexOfelement=index;">
+    <div *ngIf="prod.product !=='NA'; else nonFound">
+      <img class="card-img-top" src='{{"../../../../../assets/img/" + prod.product + ".jpg"}}' alt="Card image"
+        (click)="navigate(indexOfelement)">
+      <div class="card-body">
+        <h6 class="card-text">{{prod.product}}</h6>
+        <h6 style="color: #39A2DB;display: inline;">${{prod.price}}</h6>
+        <p style="text-decoration: line-through;display: inline; padding:5px">${{prod.offer_price}}</p>
+        <div style="text-align:center; margin-top: 7px; margin-bottom: 7px;">
+          <button class="btn btn-primary disabled" (click)="addtocart(prod)">
+            Add to cart
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <ng-template #nonFound>
+      No Data
+    </ng-template>
+
+    <!-- <ng-template #nonFound>
+    <h4 class="card-title" style="text-align: center; margin-top: 3px;">Equipment Name:</h4>
+    <p style="margin-bottom: 0;">Data {{ sub.name }}. Coming Soon!</p>
+    <hr>
+    <img class="card-img-top" src='../../../../../assets/category/noinfo.jpg' alt="Card image">
+    <div class="card-body">
+      <p class="card-text">{{sub.name}}</p>
+      <hr>
+      <a class="btn btn-primary disabled moreDet">Coming Soon!</a>
+    </div>
+  </ng-template> -->
+  </div>
+</div>
+
+
+<pagination-controls (pageChange)="p= $event" style="display: block; float: right;"></pagination-controls>
+
+<br>
+<br>
+<router-outlet></router-outlet>

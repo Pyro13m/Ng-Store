@@ -1,0 +1,10 @@
+.heading {
+  margin-left: 88px;
+  color: #798777;
+  /* position: relative; */
+}
+
+.itm:hover {
+  background-color: #39A2DB;
+
+}

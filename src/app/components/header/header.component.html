@@ -1,0 +1,59 @@
+  <!-- head -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid" style="margin-left: 60px; margin-right: 60px">
+      <a class="navbar-brand"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
+      <div class="d-flex">
+        <div class="dropdown">
+          <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Currency: USD
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">USD</a>
+            <a class="dropdown-item" href="#">INR</a>
+            <a class="dropdown-item" href="#">EUR</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Language: ENG
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">ENG</a>
+            <a class="dropdown-item" href="#">HND</a>
+            <a class="dropdown-item" href="#">GER</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+  <!-- cart -->
+  <h2 class="heading" style="display: inline">WTC <span style="color: #87A7B3;">Store</span></h2>
+  <button type="button" class="btn btn-secondary badge-number" style="float: right; margin-right: 100px;"
+    (click)="navigate()">
+    ${{totalPrice}}
+    <i class="fa fa-shopping-cart" aria-hidden="true" style="margin-left: 5px; margin-right: 5px"></i>
+    <span class="badge badge-light badge-number-icon">{{ totalItems }}</span>
+  </button>
+
+  <!-- <app-cart style="display: inline; float: right; margin-right: 100px;"></app-cart> -->
+
+  <br>
+  <br>
+
+  <!-- Menu -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 60px; margin-right: 60px">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active itm" href="#">Home</a>
+        <a class="nav-item nav-link itm" routerLink="/categories">Categories</a>
+        <a class="nav-item nav-link itm" href="#">Others</a>
+        <a class="nav-item nav-link itm" href="#">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>

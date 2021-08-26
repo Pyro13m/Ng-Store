@@ -1,0 +1,43 @@
+.carousel-indicators li {
+  height: 8px;
+  width: 8px;
+  border-radius: 15px;
+}
+
+img {
+  max-width: fit-content;
+  height: auto;
+}
+
+.home-cards {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card {
+  margin: 5px;
+}
+
+.btn-car {
+  background: #ff6b6b;
+  color: #FAF3F3;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 30px;
+  height: 30px;
+  background-color: #9ddac6;
+  border-radius: 50%;
+  top: calc(50% - 25px);
+}
+
+.carousel-control-prev {
+  left: 5%;
+}
+
+.carousel-control-next {
+  right: 5%;
+}

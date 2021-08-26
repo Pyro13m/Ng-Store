@@ -1,0 +1,31 @@
+img {
+  max-width: fit-content;
+  height: auto;
+}
+
+
+.card {
+  margin: 5px;
+}
+
+.btn-car {
+  background: #ff6b6b;
+  color: #FAF3F3;
+}
+
+.catalog {
+  margin-left: 60px;
+}
+
+.card-text {
+  color: #39A2DB;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+
+.disabled:hover {
+  cursor: not-allowed;
+}

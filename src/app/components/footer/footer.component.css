@@ -1,0 +1,186 @@
+#container {
+  width: 100%;
+  margin: 0;
+  color: #aaa7a7;
+}
+
+#part1 {
+  width: 100%;
+  height: 350px;
+  background-color: #292929;
+  margin: 0;
+}
+
+#part2 {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  position: relative;
+  top: -15px;
+  margin: 0;
+}
+
+#companyinfo {
+  width: 14%;
+  height: 280px;
+  position: relative;
+  left: 8%;
+  top: 30px;
+}
+
+#title {
+  color: gray;
+  position: relative;
+  top: 0px;
+  font-size: 14.1px;
+}
+
+#detail {
+  color: #aaa7a7;
+  font-size: 16px;
+}
+
+#explore {
+  width: 14%;
+  height: 280px;
+  position: relative;
+  top: -235px;
+  left: 29%;
+}
+
+#txt1,
+#txt2,
+#txt3,
+#txt4,
+#txt5 {
+  color: white;
+  font-size: 20px;
+}
+
+.link {
+  display: inline-flex;
+  font-size: 13px;
+  width: 200px;
+  height: 30px;
+  margin-bottom: 5px;
+  color: #aaa7a7;
+  background-color: transparent;
+  border-bottom: #aaa7a7 dotted;
+  border-width: 2px 1px;
+  position: relative;
+  top: -10px;
+}
+
+.link:hover,
+.link1:hover {
+  color: #A2DBFA;
+}
+
+#visit {
+  width: 14%;
+  height: 280px;
+  position: relative;
+  top: -515px;
+  left: 50%;
+}
+
+.text {
+  color: #aaa7a7;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+#legal {
+  width: 14%;
+  height: 280px;
+  position: relative;
+  top: -800px;
+  left: 59.5%;
+}
+
+.link1 {
+  display: flex;
+  width: 150px;
+  height: 40px;
+  color: #aaa7a7;
+  background-color: transparent;
+  border-top: 2px solid white;
+  position: relative;
+  top: -10px;
+  margin-top: 7px;
+}
+
+#subscribe {
+  position: relative;
+  top: -1080px;
+  left: 78%;
+  width: 14%;
+  height: 280px;
+}
+
+#email {
+  color: white;
+  position: relative;
+  top: -20px;
+}
+
+.btn {
+  position: relative;
+  top: -10px;
+}
+
+#txt5 {
+  position: relative;
+  top: 0px;
+}
+
+.social {
+  position: relative;
+  top: -5px;
+  margin-right: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.fa-facebook,
+.fa-twitter,
+.fa-linkedin,
+.fa-youtube {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.fa-facebook:hover {
+  color: #3b579d;
+}
+
+.fa-linkedin:hover {
+  color: #007bb6;
+}
+
+.fa-twitter:hover {
+  color: #2caae1;
+}
+
+.fa-youtube:hover {
+  color: #ff6b6b;
+}
+
+#txt6 {
+  color: white;
+  position: relative;
+  top: 5px;
+  left: 8%;
+  width: 80%;
+  font-size: 12px;
+  color: #aaa7a7;
+}
+
+.fa-cc-discover,
+.fa-cc-mastercard,
+.fa-cc-paypal,
+.fa-cc-visa {
+  font-size: 25px;
+  margin-right: 3px;
+  margin-left: 3px;
+}

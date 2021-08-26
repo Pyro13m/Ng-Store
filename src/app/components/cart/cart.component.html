@@ -1,0 +1,76 @@
+<ng-container *ngIf="prodList.length === 0">
+  <div class="container">
+    <div class="card">
+      <div class="card-title">
+        My Cart
+      </div>
+      <div class="center">
+        <img src="../../../assets/img/Cart.PNG" alt="">
+        <h4>Your card is Empty!</h4>
+        <h6>Add to cart now.</h6>
+        <button class="btn btn-primary" routerLink="/categories">Shop Now</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="prodList.length !== 0">
+  <div class="container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product</th>
+          <th scope="col">Image</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prod of prodList; let i = index">
+          <th scope="row">{{ i+1 }}</th>
+          <td>{{ prod.product }}</td>
+          <td>
+            <img class="card-img-top" style="width: 100px;"
+              src='{{"../../../../../assets/img/" + prod.product + ".jpg"}}' alt="">
+          </td>
+          <td>{{prod.total}}</td>
+          <td>{{prod.quantity}}</td>
+
+          <td>
+            <button class="btn btn-danger" (click)="removeItem(prod)"><i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"></td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="emptyCart()">
+              Empty Cart <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="navigate()">
+              Shop More <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-success btn-sm" (click)="navigate()">
+              Check-Out <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td>
+            <h6 style="font-weight: 500">Total: ${{grandTotal}}</h6>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+
+  </div>
+
+</ng-container>
+
+<router-outlet></router-outlet>
