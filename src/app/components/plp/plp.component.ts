@@ -30,8 +30,8 @@ export class PlpComponent implements OnInit {
     )
   }
 
-  navigate(data: number){
-    this.router.navigate(['/product-page/product-det'],{
+  navigate(data: number, prod: string){
+    this.router.navigate(['/product-page/product-det/', prod],{
       state: {
         idx: data
       }

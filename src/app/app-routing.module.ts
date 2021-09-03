@@ -8,11 +8,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'product-page',
+    path: 'product-page/:id',
     component: PlpComponent,
   },
   {
-    path:'product-page/product-det',
+    path:'product-page/product-det/:id',
     component: ProductdpComponent
   },
   {

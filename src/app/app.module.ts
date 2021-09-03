@@ -15,6 +15,12 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { HomeComponent } from './components/home/home.component';
 import { ProductdpComponent } from './components/productdp/productdp.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { CartEffects } from '../app/store/effects/cart.effects';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,10 @@ import { CategoriesComponent } from './components/categories/categories.componen
     HttpClientModule,
     AppRoutingModule,
      NgxPaginationModule,
-     FormsModule
+     FormsModule,
+     StoreModule.forRoot(reducers, { metaReducers }),
+     !environment.production ? StoreDevtoolsModule.instrument() : [],
+     EffectsModule.forRoot([CartEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

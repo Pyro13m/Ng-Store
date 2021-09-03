@@ -8,3 +8,7 @@
   background-color: #39A2DB;
 
 }
+
+#dis-lnk:hover {
+  cursor: not-allowed;
+}
