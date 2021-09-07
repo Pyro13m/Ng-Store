@@ -16,3 +16,8 @@ export const getError = createSelector(
   getCartFeatureState,
   state => state.error
 )
+
+// export const deleteItem = createSelector(
+//   getCartFeatureState,
+//   state => state.items
+// )

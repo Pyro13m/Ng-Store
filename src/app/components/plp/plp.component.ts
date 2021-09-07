@@ -1,7 +1,9 @@
+import { State, Store } from '@ngrx/store';
 import { CartService } from './../../services/cart.service';
 import { DataServiceService } from './../../services/data-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as CartActions from '../../store/actions/cart.actions'
 
 @Component({
   selector: 'app-plp',
@@ -18,7 +20,8 @@ export class PlpComponent implements OnInit {
   constructor(
     private dataService: DataServiceService,
     private router: Router,
-    private cartService: CartService) { }
+    private cartService: CartService,
+    private store: Store) { }
 
   ngOnInit(): void {
     this.dataService.getAll()
@@ -41,7 +44,7 @@ export class PlpComponent implements OnInit {
   addtocart(prod: any){
     prod['quantity'] = 1;
     prod['total'] = prod.price;
-    this.cartService.addtCart(prod);
+    this.store.dispatch(new CartActions.AddToCart(prod));
     console.log(prod);
   }
 
@@ -49,16 +52,16 @@ export class PlpComponent implements OnInit {
 
   // }'
 
-   fetchSeries(event: any) {
-    if (event.target.value === '') {
-      return this.result;
-    }
-    else{
-      this.result = this.prod_data.filter((data: any) => {
-        return data.name.toLowerCase().startsWith(event.target.value.toLowerCase());
-      })
-    }
+  //  fetchSeries(event: any) {
+  //   if (event.target.value === '') {
+  //     return this.result;
+  //   }
+  //   else{
+  //     this.result = this.prod_data.filter((data: any) => {
+  //       return data.name.toLowerCase().startsWith(event.target.value.toLowerCase());
+  //     })
+  //   }
 
-  }
+  // }
 
 }

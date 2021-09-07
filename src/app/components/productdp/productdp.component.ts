@@ -1,8 +1,10 @@
+import { Store } from '@ngrx/store';
 import { DataServiceService } from './../../services/data-service.service';
 import { Data, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './../../services/cart.service';
 import { Prod } from 'src/assets/prod';
+import * as CartActions from '../../store/actions/cart.actions'
 
 @Component({
   selector: 'app-productdp',
@@ -17,7 +19,8 @@ export class ProductdpComponent implements OnInit {
 
   constructor(private router: Router,
      private dataService: DataServiceService,
-     private cartService: CartService) {
+     private cartService: CartService,
+     private store: Store) {
 
     const data = this.router.getCurrentNavigation();
     this.dataProd = data?.extras.state;
@@ -43,10 +46,12 @@ export class ProductdpComponent implements OnInit {
       )
   }
 
-  addtocart(prod: any){
+  addtocart(prod: Prod){
     this.prod_det['quantity'] = this.qtn;
     this.prod_det['total'] = this.prod_det.price * this.qtn;
-    this.cartService.addtCart(this.prod_det);
+    // this.cartService.addtCart(this.prod_det);
+    this.store.dispatch(new CartActions.AddToCart(prod));
+
   }
 
   show(){

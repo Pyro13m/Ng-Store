@@ -1,5 +1,6 @@
+// import { DeleteCartItem } from './../actions/cart.actions';
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
+import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { EmptyError, observable, Observable, of } from 'rxjs';
 import { Action } from '@ngrx/store';
 import * as cartActions from '../actions/cart.actions';
@@ -17,9 +18,8 @@ export class CartEffects {
       action => this.cartService.getProducts().pipe(
         map(items => (new cartActions.LoadCartsSuccess({data: items}))),
         catchError(err => of(new cartActions.LoadCartsFailure({error: err})))
-        )
+      )
      )
-
     )
   )
 }

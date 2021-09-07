@@ -1,6 +1,11 @@
+import { State } from './../../store/reducers/index';
+import { Store, select } from '@ngrx/store';
+
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as CartActions from '../../store/actions/cart.actions'
+import * as fromCart from '../../store/selectors/cart.selectors'
 
 @Component({
   selector: 'app-header',
@@ -11,18 +16,31 @@ export class HeaderComponent implements OnInit {
 
   public totalItems = 0;
   public totalPrice = 0;
-  constructor(private router: Router, private cartService: CartService) {
-    this.cartService.getProducts()
-    .subscribe(res =>{
-      this.totalItems = res.length;
-      this.totalPrice = 0;
-      for(let i=0;i<res.length;i++){
-        this.totalPrice += res[i].total;
-      }
-      console.log("tot price: ",this.totalPrice);
+  constructor(private router: Router, private cartService: CartService,
+   private store: Store<State>) {
+    // this.cartService.getProducts()
+    // .subscribe(res =>{
+    //   this.totalItems = res.length;
+    //   this.totalPrice = 0;
+    //   for(let i=0;i<res.length;i++){
+    //     this.totalPrice += res[i].total;
+    //   }
+    //   console.log("tot price: ",this.totalPrice);
 
-      console.log("len: ", this.totalItems);
-    })
+    //   console.log("len: ", this.totalItems);
+    // })
+
+    this.store.dispatch(new CartActions.LoadCarts()); //action dispatched
+
+    this.store.pipe(select(fromCart.getCart)).subscribe(
+      (data: any) => {
+        this.totalItems = data.length;
+        this.totalPrice = 0;
+        for(let i=0;i<data.length;i++){
+        this.totalPrice += data[i].total;
+        }
+      }
+    )
   }
 
   ngOnInit(): void {
