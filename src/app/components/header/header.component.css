@@ -12,3 +12,62 @@
 #dis-lnk:hover {
   cursor: not-allowed;
 }
+
+
+.toggle-button {
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: red;
+  border-radius: 10px;
+}
+
+#icon {
+  color: red;
+  font-size: 30px;
+  line-height: 80px;
+  float: right;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1048px) {
+  #icon {
+    display: block;
+    float: right;
+  }
+
+  .navbar-nav {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: blue;
+    top: 80px;
+    left: -100%;
+    display: block;
+    transition: all .5s;
+
+  }
+
+  .nav-item {
+    display: block;
+    text-align: center;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  .navbar-nav .show {
+    left: 0;
+  }
+}

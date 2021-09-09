@@ -4,6 +4,10 @@
   color: #aaa7a7;
 }
 
+.title {
+  font-size: 35px;
+}
+
 #part1 {
   width: 100%;
   height: 350px;
@@ -26,6 +30,10 @@
   position: relative;
   left: 8%;
   top: 30px;
+}
+
+#comtitle {
+  font-size: 30px;
 }
 
 #title {
@@ -183,4 +191,125 @@
   font-size: 25px;
   margin-right: 3px;
   margin-left: 3px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  #part1 {
+    width: 100%;
+    height: 250px;
+    background-color: #292929;
+    margin: 0;
+  }
+
+  #comtitle {
+    font-size: 15px;
+  }
+
+  #title {
+    font-size: 10px;
+  }
+
+  #detail {
+    font-size: 10px;
+  }
+
+  .fa {
+    font-size: 15px;
+  }
+
+  #explore #txt1,
+  .link {
+    font-size: 65%;
+    width: 100px;
+    height: 22px;
+    margin-bottom: 1px;
+  }
+
+  #visit #txt1,
+  .link {
+    font-size: 70%;
+    width: 100px;
+    height: 22px;
+    margin-bottom: 1px;
+  }
+
+  #subscribe #txt4 {
+    font-size: 70%;
+    width: 100px;
+    height: 22px;
+  }
+
+  #subscribe #txt5 {
+    font-size: 70%;
+    margin: 0;
+  }
+
+  #email {
+    font-size: 10px;
+  }
+
+  .m-btn {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #part1 {
+    width: 100%;
+    height: 300px;
+    background-color: #292929;
+    margin: 0;
+  }
+
+  #comtitle {
+    font-size: 15px;
+  }
+
+  #title {
+    font-size: 10px;
+  }
+
+  #detail {
+    font-size: 10px;
+  }
+
+  .fa {
+    font-size: 15px;
+  }
+
+  #explore #txt1,
+  .link {
+    font-size: 65%;
+    width: 100px;
+    height: 22px;
+    margin-bottom: 1px;
+  }
+
+  #visit #txt1,
+  .link {
+    font-size: 70%;
+    width: 100px;
+    height: 22px;
+    margin-bottom: 1px;
+  }
+
+  #subscribe #txt4 {
+    font-size: 70%;
+    width: 100px;
+    height: 22px;
+  }
+
+  #subscribe #txt5 {
+    font-size: 70%;
+    margin: 0;
+  }
+
+  #email {
+    font-size: 10px;
+  }
+
+  .m-btn {
+    font-size: 10px;
+  }
 }

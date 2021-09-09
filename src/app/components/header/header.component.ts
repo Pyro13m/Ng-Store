@@ -14,6 +14,7 @@ import * as fromCart from '../../store/selectors/cart.selectors'
 })
 export class HeaderComponent implements OnInit {
 
+  navbarOpen : boolean = false;
   public totalItems = 0;
   public totalPrice = 0;
   constructor(private router: Router, private cartService: CartService,
@@ -51,4 +52,11 @@ export class HeaderComponent implements OnInit {
     // console.log("len: ", this.totalItems);
   }
 
+  toggle(){
+    this.navbarOpen = !this.navbarOpen;
+  }
+
+  show(){
+    this.navbarOpen = !this.navbarOpen;
+  }
 }
